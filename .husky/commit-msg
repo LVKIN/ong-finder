@@ -1,0 +1,3 @@
+echo "Running commit message linter..."
+
+npx commitlint --edit "$1"
