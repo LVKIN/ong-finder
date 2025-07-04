@@ -9,16 +9,13 @@
 		"typescript-eslint": "^8.35.1"
 	},
 	"scripts": {
-		"prepare": "husky",
+		"prepare": "husky && husky install",
 		"lint": "prettier --check .",
 		"format": "prettier --write ."
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
 	"lint-staged": {
-		"**/*": "prettier --write --ignore-unknown"
+		"**/*": "prettier --write --ignore-unknown",
+		"*.js": "eslint --cache --fix",
+		"*.{js,css,md}": "prettier --write"
 	}
 }
