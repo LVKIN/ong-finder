@@ -1,6 +1,7 @@
 {
 	"dependencies": {
 		"@prisma/client": "^6.11.1",
+		"dotenv-cli": "^8.0.0",
 		"next": "15.3.5",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0"
@@ -32,7 +33,8 @@
 		"build": "next build",
 		"start": "docker compose up -d && next start",
 		"prisma:generate": "npx prisma generate",
-		"prisma:migrate": "npx prisma migrate dev --name init",
+		"prisma:migrate:dev": "npx prisma migrate dev",
+		"prisma:migrate:deploy": "dotenv -e .env.prod -- npx prisma migrate deploy",
 		"prisma:studio": "npx prisma studio"
 	},
 	"lint-staged": {
